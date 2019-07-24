@@ -1,0 +1,15 @@
+<!--components/item/item.wxml-->
+<view class="itemBox">
+  <text>{{tiList.options}}</text>
+ <radio-group class="radio-group" bindchange="selectChange" wx:if="{{tiList.type === 'radio'}}">
+    <view class="radio" wx:for="{{tiList.optionSelect}}" wx:key="{{index}}">
+      <radio value="{{item.xh}}" checked="{{item.flag}}"/>{{item.xh}}: {{item.title}}
+    </view>
+</radio-group>
+
+<checkbox-group bindchange="selectChange" wx:if="{{tiList.type === 'checkout'}}">
+   <view class="radio" wx:for="{{tiList.optionSelect}}" wx:key="{{index}}">
+      <checkbox value="{{item.xh}}" checked="{{item.flag}}"/>{{item.xh}}: {{item.title}}
+    </view>
+</checkbox-group>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/floor/floor.wxml-->
+<view class="carWrapper">
+  <view class="content">
+      <scroll-view scroll-y style="height: 600px" scroll-into-view="{{toId}}" bindscroll="handleScroll" >
+          <view wx:for="{{carList}}"  wx:key="{{index}}"  id="{{index}}" class="countList">
+              <text>{{index}}</text>
+              <view wx:for="{{carList[index]}}" wx:for-index="ind" wx:key="{{ind}}" >
+                  <text>{{item.Name}}</text>
+              </view>
+          </view>
+      </scroll-view>
+  </view>
+   <view class="slide">
+      <text wx:for="{{carList}}" wx:key="{{index}}" bind:tap="toViewFn" id="{{index}}" class="{{classkey == index ? 'active' : ''}}">{{index}}</text>
+  </view>
+</view>
+

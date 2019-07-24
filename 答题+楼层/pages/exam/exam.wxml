@@ -1,0 +1,10 @@
+<!-- pages/exam/exam.wxml -->
+<view class="box">
+    <tiList tiList="{{examData[curdataIndex]}}" curIndex = "{{curdataIndex}}" bind:getVal="showVal"></tiList>
+</view>
+<button wx:if="{{!(curdataIndex === 0)}}" bindtap="changeCur" data-flag="false" >上一题</button>
+<button wx:if="{{!(curdataIndex >= examData.length - 1)}}" bindtap="changeCur" data-flag="true">下一题</button>
+<button>提交</button>
+
+
+
